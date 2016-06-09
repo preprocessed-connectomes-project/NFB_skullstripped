@@ -1,4 +1,4 @@
 ---
 layout: page
-title: PCP Quality Assessment Protocol
+title: Skull Stripped Repository
 ---
