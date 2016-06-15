@@ -36,9 +36,9 @@ With the above commands, the outputs will be stored in a directory named `qap_ou
 
 ## Contributors
 
-Benjamin Puccio (Executive)
+Benjamin Puccio
 
-Cameron Craddock (Team Lead)
+Cameron Craddock
 
 Elise Taverna
 
