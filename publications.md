@@ -1,4 +1,4 @@
 ---
 layout: page
-title: Skull Stripped Repository
+title: NFBS Skull-Stripped Repository
 ---
