@@ -9,24 +9,27 @@ The BEaST method (brain extraction based on nonlocal segmentation technique) was
 
 The Neurofeedback Skull-stripped (NFBS) repository is available for download on the NFB\_skullstripped Github page, which can be found on the Preprocessed Connectomes Project website. It will allow researchers and data scientists to test brain extraction methods, as well as for training data in machine learning based algorithms.
 
-For more information, please see ...
+For more information, please see:
+
+Puccio et al. A repository of skull-stripped T1-weighted structural MRI data. (2016).
 
 **Table of Contents**
 
 * [Contents of the Repository](#contents-of-the-repository)
 * [Downloading the Repository](#downloading-the-repository)
-* [Contributors](##contributor)
+* [Contributors](##contributors)
+* [References](##references)
 
 
 ## Contents of the Repository
 
 The repository contains data from 125 participants, ranging from 21 to 45 years old. For each participant, the repository contains:
 
-* Structural T1-weighted image in NiFTI format (.nii.gz)
-* Skull-stripped image in NiFTI format (.nii.gz)
-* Brain mask in NiFTI format (.nii.gz)
+* Structural T1-weighted anonymized (de-faced) image
+* Skull-stripped image
+* Brain mask
 
-
+The structural MRI data was collected as a part of the Neurofeedback study in the Enhanced Nathan Kline Institute - Rockland Sample. The resolution of the images is 1mm<sup>3</sup> and each file is in NiFTI format (.nii.gz).
 
 ## Downloading the Repository
 
@@ -35,6 +38,8 @@ Please go to our github page, http://www.github.com/preprocessed-connectomes-pro
 The images are available in NiFTI format (.nii.gz).
 
 The total amount of free hard disk space required is ?
+
+
 
 ## Contributors
 
@@ -53,7 +58,7 @@ Elise Taverna
 
 ## References
 
-[^1]:
+[^1]:This is the first reference
 
 [^2]:
 
