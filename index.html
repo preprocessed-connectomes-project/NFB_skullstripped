@@ -34,81 +34,107 @@
 
                 <div id="main_content_wrap" class="outer">
                     <section id="main_content" class="inner">
-                        <p><strong>The Neurofeedback Skull-stripped (NFBS) repository</strong> is a database of 125 T1-weighted anatomical MRI scans that are manually skull-stripped. NFBS allows researchers and data scientists to test brain extraction methods and have training data to be used in machine learning based algorithms. The data was collected as a part of the <a href="http://fcon_1000.projects.nitrc.org/indi/enhanced/">Enhanced Rockland Sample</a> Neurofeedback Study. NFBS is available for download on the <a href="https://github.com/preprocessed-connectomes-project/NFB_skullstripped">NFB_skullstripped Github page</a>.</p>
+                        <p><strong>The Neurofeedback Skull-stripped (NFBS) repository</strong> is a database of 125 T1-weighted anatomical MRI scans that are manually skull-stripped. NFBS provides researchers with gold standard training and testing data for developing machine learning algorithms. The data was collected as a part of the <a href="http://fcon_1000.projects.nitrc.org/indi/enhanced/">Enhanced Rockland Sample</a> Neurofeedback Study. NFBS is available for download on the <a href="https://github.com/preprocessed-connectomes-project/NFB_skullstripped">NFB_skullstripped Github page</a>.</p>
 
 <p>For more information, please see:</p>
 
-<p>Puccio et al. A repository of skull-stripped T1-weighted structural MRI data. (2016).</p>
+<p>Puccio et al. The Preprocessed Connectomes Project: repository of manually-corrected skull-stripped T1-weighted anatomical MRI data. (2016).</p>
 
-<p><strong><em>Table of Contents</em></strong></p>
+<center>
+&lt;img src="https://github.com/bpuccio/NFB_skullstripped/blob/gh-pages/images/logo.png" width=20% height=20%&gt;
+<center>
 
-<ul>
-  <li><a href="#abstract">Abstract</a></li>
-  <li><a href="#contents-of-the-repository">Contents of the Repository</a></li>
-  <li><a href="#downloading-the-repository">Downloading the Repository</a></li>
-  <li><a href="##contributors">Contributors</a></li>
-  <li><a href="##references">References</a></li>
-</ul>
+***Table of Contents***
 
-<h2 id="abstract">Abstract</h2>
-<p>Brain extraction, also known as skull stripping, is one of the first steps used in the preprocessing of neuroimaging data. The purpose is to remove non-brain tissue from structural magnetic resonance imaging (MRI) data in order to increase the quality of subsequent analyses. Many algorithms have been developed in order to solve the problem, though none have been able to overcome all of the challenges. In order to facilitate the development of automatic brain extraction methods, 125 T1-weighted anatomical MRI scans from The Enhanced Rockland Sample Neurofeedback Study were used to create a repository of manually skull stripped T1-weighted MR images.</p>
+* [Abstract](#abstract)
+* [Contents of the Repository](#contents-of-the-repository)
+* [Data Analysis](#data-analysis)
+* [Downloading the Repository](#downloading-the-repository)
+* [Contributors](##contributors)
+* [References](##references)
 
-<p>The BEaST method<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup> (brain extraction based on nonlocal segmentation technique) was used to create the initial masks. A few masks were chosen to be manually edited and used as the reference library when running BEaST again. Manual editing was performed using the Freeview visualization software from Freeview. In total, 85 of the masks were hand edited and 40 were deemed good enough to not be edited. In order to compare the quality of the repository, a few skull stripping algorithms were used on the anatomical scans. The results were quantified using our repository as gold truth data and comparing with masks generated from other skull stripping algorithms (BET<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup>, 3dSkullStrip<sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup>, Freesurfer HWA<sup id="fnref:4"><a href="#fn:4" class="footnote">4</a></sup>).</p>
 
-<h2 id="contents-of-the-repository">Contents of the Repository</h2>
 
-<p>The repository contains data from 125 participants, ranging from 21 to 45 years old. For each participant, the repository contains:</p>
+## Abstract
+Skull-stripping, also known as brain extraction, is the procedure of removing non-brain tissue from anatomical MRI data. This procedure is necessary for calculating brain volume and for improving the quality of brain image registration and segmentation. Developing new brain extraction algorithms and evaluating their performance requires gold standard} data from a variety of different scanners and acquisition methods. We complement existing repositories with manually-corrected brain extractions for 125 T1-weighted anatomical scans from the Enhanced Rockland Sample Neurofeedback Study.
 
-<ul>
-  <li>Structural T1-weighted anonymized (de-faced) image</li>
-  <li>Skull-stripped image</li>
-  <li>Brain mask</li>
-</ul>
+Skull-stripped images were obtained using an iterative two-step procedure. In the first step, the BEaST algorithm was used to automatically obtain brain masks. Following visual inspection, the BEaST-derived masks were manually edited[^1]. In total, 85 of the skull-strips were hand-edited and 40 were deemed to not need editing. The resulting repository was used to compare the outputs from the BET[^2], 3dSkullStrip[^3], and FreeSurfer HWA[^4] algorithms (BEaST was not compared to avoid bias). Two outside repositories, IBSR[^5] and LPBA40[^6], were also tested with these algorithms, as well as with BEaST using our repository in its prior library.
 
-<p>The structural MRI data was collected as a part of the Neurofeedback study in the Enhanced Nathan Kline Institute - Rockland Sample. The resolution of the images is 1mm<sup>3</sup> and each file is in NiFTI format (.nii.gz).</p>
+## Contents of the Repository
 
-<h2 id="downloading-the-repository">Downloading the Repository</h2>
+The repository contains data from 125 participants, ranging from 21 to 45 years old. For each participant, the repository contains:
 
-<p>Please go to <a href="http://www.github.com/preprocessed-connectomes-project/NFB_skullstripped">our github page</a> for download. The total amount of free hard disk space required is 1.8 GB.</p>
+* Structural T1-weighted anonymized (de-faced) image
+* Skull-stripped image
+* Brain mask
 
-<p>The images are available in NiFTI format (.nii.gz).</p>
+The structural MRI data was collected as a part of the Neurofeedback study in the Enhanced Nathan Kline Institute - Rockland Sample. The resolution of the images is 1mm<sup>3</sup> and each file is in NiFTI format (.nii.gz).
 
-<h2 id="contributors">Contributors</h2>
+## Data Analysis
+<center>
+&lt;img src="https://github.com/bpuccio/NFB_skullstripped/blob/gh-pages/images/edit.png" width=50% height=50%&gt;
+<center>
 
-<p>Benjamin Puccio</p>
+<center>
+&lt;img src="https://github.com/bpuccio/NFB_skullstripped/blob/gh-pages/images/boxplot_NFBS.png" width=50% height=50%&gt;
+<center>
 
-<p>Cameron Craddock</p>
+<center>
+&lt;img src="https://github.com/bpuccio/NFB_skullstripped/blob/gh-pages/images/boxplot_I&amp;L.png" width=50% height=50%&gt;
+<center>
 
-<p>Carol Froehlich</p>
 
-<p>Steven Giavasis</p>
+## Downloading the Repository
 
-<p>Amalia McDonald</p>
+Please go to [our github page](http://www.github.com/preprocessed-connectomes-project/NFB_skullstripped) for download. The total amount of free hard disk space required is 1.8 GB.
 
-<p>John Pellman</p>
+The images are available in NiFTI format (.nii.gz).
 
-<p>James Pooley</p>
 
-<p>Elise Taverna</p>
 
-<h2 id="references">References</h2>
 
-<div class="footnotes">
-  <ol>
-    <li id="fn:1">
-      <p>Eskildsen, S.F., Coupe, P., Fonov, V., Manjon, J.V., Leung, K.K.,Guizard, N., Wassef, S.N., stergaard, L.R., Collins, D.L.: BEaST:Brain extraction based on nonlocal segmentation technique.NeuroImage59(3), 2362{2373 (2012).doi:10.1016/j.neuroimage.2011.09.0125. <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
-    </li>
-    <li id="fn:2">
-      <p>Smith, S.M.: Fast robust automated brain extraction. Human BrainMapping17(3), 143{155 (2002). doi:10.1002/hbm.100629. <a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
-    </li>
-    <li id="fn:3">
-      <p>Cox, R.W.: Afni: software for analysis and visualization of functional magnetic resonance neuroimages. Computers and Biomedical research29(3), 162{173 (1996)7. <a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
-    </li>
-    <li id="fn:4">
-      <p>Segonne, F., Dale, A.M., Busa, E., Glessner, M., Salat, D., Hahn,H.K., Fischl, B.: A hybrid approach to the skull stripping problem in MRI. NeuroImage22(3), 1060{1075 (2004).doi:10.1016/j.neuroimage.2004.03.03210. <a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
-    </li>
-  </ol>
-</div>
+## Contributors
+
+Benjamin Puccio
+
+Cameron Craddock
+
+Carol Froehlich
+
+Steven Giavasis
+
+Amalia McDonald
+
+John Pellman
+
+James Pooley
+
+Elise Taverna
+
+
+## References
+
+
+[^1]:Eskildsen, S.F., Coupe, P., Fonov, V., Manjon, J.V., Leung, K.K., Guizard, N., Wassef, S.N., stergaard, L.R., Collins, D.L.: BEaST: Brain extraction based on nonlocal segmentation technique. NeuroImage 59( 3), 2362{2373 (2012).doi:10.1016/j.neuroimage.2011.09.0125.
+
+[^2]:Smith, S.M.: Fast robust automated brain extraction. Human BrainMapping17( 3), 143{155 (2002). doi:10.1002/hbm.100629.
+
+[^3]:Cox, R.W.: Afni: software for analysis and visualization of functional magnetic resonance neuroimages. Computers and Biomedical research 29(3), 162{173 (1996)7.
+
+[^4]:Segonne, F., Dale, A.M., Busa, E., Glessner, M., Salat, D., Hahn,H.K., Fischl, B.: A hybrid approach to the skull stripping problem in MRI. NeuroImage 22(3), 1060{1075 (2004).doi:10.1016/j.neuroimage.2004.03.03210.
+
+[^5]:Rohlfing, T.: Image similarity and tissue overlaps as surrogates for image registration accuracy: widely used but unreliable. IEEE transactions on medical imaging 31(2), 153{163 (2012)12.
+
+[^6]:Shattuck, D.W., Mirza, M., Adisetiyo, V., Hojatkashani, C., Salamon,G., Narr, K.L., Poldrack, R.A., Bilder, R.M., Toga, A.W.: Construction of a 3d probabilistic atlas of human cortical structures. Neuroimage 39(3), 1064{1080 (2008)
+
+[^7]:Automatic Registration Toolbox. http://www.nitrc.org/projects/art/4.
+
+[^8]:NiBabel. http://nipy.org/nibabel/6.
+
+[^9]:Hunter, J.D.: Matplotlib: A 2d graphics environment. Computing InScience &amp; Engineering 9(3), 90{95 (2007)8.
+
+[^10]:Iglesias, J.E., Liu, C.Y., Thompson, P.M., Tu, Z.: Robust brain extraction across datasets and comparison with publicly available methods. IEEE Transactions on Medical Imaging3 0(9), 1617{1634(2011). doi:10.1109/TMI.2011.213815211.
+</center></center></center></center></center></center></center></center>
 
                     </section>
                 </div>
