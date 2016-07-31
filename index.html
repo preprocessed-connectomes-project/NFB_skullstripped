@@ -24,6 +24,7 @@
   		        <div id='cssmenu'>
   		            <ul>
   		                <li><a href='index.html'>Overview</a></li>
+						<li class='active'><a href='#downloading-the-repository'>Download</a></li>
                         <li class='active'><a href='publications.html'>Publications</a></li>
                         <li class='active'><a href='https://preprocessed-connectomes-project.github.io' target="_blank">PCP</a></li>
   		                <li class='active'><a href='https://github.com/preprocessed-connectomes-project/NFB_skullstripped' target="_blank">View on Github</a></li>
@@ -36,11 +37,11 @@
                     <section id="main_content" class="inner">
                         <p><img style="float: left;margin:0 23px 0 0" src="logo.png" width="22%" height="22%" /></p>
 
-<p><strong>The Neurofeedback Skull-stripped (NFBS) repository</strong> is a database of 125 T1-weighted anatomical MRI scans that are manually skull-stripped. NFBS provides researchers with gold standard training and testing data for developing machine learning algorithms. The data was collected as a part of the <a href="http://fcon_1000.projects.nitrc.org/indi/enhanced/">Enhanced Rockland Sample</a> Neurofeedback Study. NFBS is available for download on the <a href="https://github.com/preprocessed-connectomes-project/NFB_skullstripped">NFB_skullstripped Github page</a>.</p>
+<p><strong>The Neurofeedback Skull-stripped (NFBS) repository</strong> is a database of 125 T1-weighted anatomical MRI scans that are manually skull-stripped. I addition to aiding in the processing and analysis of the NFB dataset, NFBS provides researchers with gold standard training and testing data for developing machine learning algorithms. The data was collected as a part of the <a href="http://fcon_1000.projects.nitrc.org/indi/enhanced/">Enhanced Rockland Sample</a> Neurofeedback Study. NFBS is available for download on the <a href="https://github.com/preprocessed-connectomes-project/NFB_skullstripped">NFB_skullstripped Github page</a>.</p>
 
 <p>For more information, please see:</p>
 
-<p>Puccio et al. The Preprocessed Connectomes Project: repository of manually-corrected skull-stripped T1-weighted anatomical MRI data. GigaScience. (2016).</p>
+<p>Puccio et al. The Preprocessed Connectomes Project: repository of manually-corrected skull-stripped T1-weighted anatomical MRI data, <em>in submission</em></p>
 
 <p><strong><em>Table of Contents</em></strong></p>
 
@@ -83,35 +84,36 @@
 
 <p>After the masks were all judged as fitting the brain mask definition, they were used as gold standard data and compared to other datasets by testing various skull-stripping algorithms, specifically BET<sup id="fnref:2:1"><a href="#fn:2" class="footnote">2</a></sup>, 3dSkullStrip<sup id="fnref:3:1"><a href="#fn:3" class="footnote">3</a></sup>, FreeSurfer Hybrid Watershed Algorithm<sup id="fnref:5:1"><a href="#fn:5" class="footnote">5</a></sup> (HWA). BET was used with the bias field and neck setting (-B) since our anatomical images contained the subjects’ necks.</p>
 
-<p><img src="boxplot_NFBS.png" width="80%" height="80%" /></p>
+<p><img src="boxplot_NFBS.png" width="20%" height="20%" /></p>
 
 <p>Two datasets were used as a comparison, the Internet Brain Segmentation Repository<sup id="fnref:5:2"><a href="#fn:5" class="footnote">5</a></sup> (IBSR) and the LONI Probabilistic Brain Atlas<sup id="fnref:6:1"><a href="#fn:6" class="footnote">6</a></sup> (LPBA40).</p>
 
-<p><img src="boxplot_I&amp;L.png" width="80%" height="80%" /></p>
+<p><img src="boxplot_IL.png" width="40%" height="40%" /></p>
 
 <h2 id="downloading-the-repository">Downloading the Repository</h2>
 
-<p>Please go to <a href="http://www.github.com/preprocessed-connectomes-project/NFB_skullstripped">our github page</a> for download. The total amount of free hard disk space required is 1.9 GB.</p>
+<ul>
+<li>You may download the dataset from our <a href="https://s3.amazonaws.com/fcp-indi/data/Projects/RocklandSample/NFBS_Dataset.tar.gz">Amazon S3 bucket</a>. The total amount of free hard disk space required is 1.9 GB. The images are available in NiFTI format (.nii.gz).</li>
+</ol>
 
-<p>The images are available in NiFTI format (.nii.gz).</p>
+<br>
+<h3>
+<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Credits</h3>
 
-<h2 id="contributors">Contributors</h2>
+<p>
+    <strong>NFB Skullstripped Contributors</strong><br>
+    <a href="mailto:Benjamin.Puccio@nki.rfmh.org">Benjamin Puccio</a><sup>1</sup>,	
+	James Pooley<sup>2</sup>, John Pellman<sup>2</sup>, Elise Taverna<sup>1</sup>,
+	<a href="mailto:ccraddock@nki.rfmh.org">R. Cameron Craddock</a><sup>1,2</sup> 
+</p>
 
-<p>Benjamin Puccio</p>
+<p><small>
+	<sup>1</sup><a href="http://www.rfmh.org/nki/" target="_blank">Nathan S. Kline Institute for Psychiatric Research</a>, Orangeburg, New York, United States of America,
+	<sup>2</sup><a href="http://www.childmind.org/en/center-for-developing-brain/" target="_blank">Center for the Developing Brain</a>, Child Mind Institute</a>, New York, New York, United States of America
+</small></p>
 
-<p>Cameron Craddock</p>
-
-<p>Carol Froehlich</p>
-
-<p>Steven Giavasis</p>
-
-<p>Amalia McDonald</p>
-
-<p>John Pellman</p>
-
-<p>James Pooley</p>
-
-<p>Elise Taverna</p>
+<h2 id="references">Acknowledgements</h2>
+We would like to thank Dr. Simon Fristed Eskildsen for help with the installation and optimization of the BEaST method. We would also like to acknowledge Qingyang Li for creating the BEaST guide, as well as the <a href="https://rpubs.com/conge/beast_intro" target="_blank">Bash script</a> that we based our script on. Lastly, we would like to thank all of those involved in the participation, data collection, and data sharing initiative of the Enhanced Rockland Sample. This work was supported by R01MH101555 from the National Institute of Mental Health to RCC.
 
 <h2 id="references">References</h2>
 
