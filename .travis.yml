@@ -1,11 +1,8 @@
-  
-# .travis.yml
-
 script: bundle exec rake travis
-
 env:
-  - secure: "ldxWJXz2Z0hhjYETZ7qW0R3IBvBHCE5ZNLS4CYawEQKCGBPneePA8o5/evw8K8Ra3yQI3Ba/XmRZlPQ3aHxW+GReb7yb/HDhe+9obUKikBXvDXErUKQm/2G0PrhXm518uBxaChfQBj2psq9FjnbrHX6ZcVU7L2JhoQfedOOFt9Q="
-
+  matrix:
+  - secure: ldxWJXz2Z0hhjYETZ7qW0R3IBvBHCE5ZNLS4CYawEQKCGBPneePA8o5/evw8K8Ra3yQI3Ba/XmRZlPQ3aHxW+GReb7yb/HDhe+9obUKikBXvDXErUKQm/2G0PrhXm518uBxaChfQBj2psq9FjnbrHX6ZcVU7L2JhoQfedOOFt9Q=
+  - secure: jsRbdJFuctSH6W/hnXNyB7qaJyFLFsBgMfd+ngN3c4/z2TUhx5foyhYaNgJBHVFhxXBhZd66NZyyATycGSAg2xjLgrHRcAOVfKahviEWWVljOheshuFWzde4pljzwx0pScU3meMv1g+xZttBCBbXYQGTkJtgvSJPRPL0WXF7Y4mbWFEErSRTXzf0EfSrWwGMy8ZouP5YyLjAKGGVR3TxHFqbRdO5pDT/38/Kcih207EEPcYxadxwNFhh++FlYOn6uK4f0YI8z025b5YjAClpf95p18K/8lusM0ChtlPoY+nYsqFtCT871CYKfwohKDm/rejrUqFtwNefncl0ohap9nJc9AGuLkvOM06I9JPIjX8Dd9+M9X+SDzoIXk6ZA7TjehPgp/R8emggiwRmI5UEDO8YrD+3NcSyFFICiWl9h33IqiQLqc5yYht/XEUnRYFIveAx7PX1+pnBSj/zGv1Khw4OHkllXOVCHotD6cNXeTVZK7QRh7d2QhCA1SSYSsK3SfDI6/9SaaAiFdsZDzxqJVe067+nH9oQsKS4ujM/+tPSNImbVngBkvH5jhEqtj0Ce98l6AInXpi074FQMfs1Zz8CMfkjcR/mMxetYWkmY0rRgBXBV80dSD35InLBMIye5UwEhpVMTRv9gfq7u/8T2mGTcxjqclUThtTcIQIORkk=
 branches:
   only:
-    - master
+  - master
