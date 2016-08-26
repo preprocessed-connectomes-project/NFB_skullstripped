@@ -53,8 +53,8 @@ body {
   box-sizing: border-box;
   color:#373737;
   /*background: #212121 url("../images/big_mont.jpg") no-repeat 0 0;*/
-  background:#d6c9b8;
-  font-size: 16px;
+  background:#d6c9b8 url("../images/block.png") repeat 0 0;
+  font-size: 20px;
   font-family: 'Myriad Pro', Calibri, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
@@ -232,6 +232,7 @@ ul {
 ol {
   list-style: decimal inside;
   padding-left: 20px;
+  text-indent: -1em
 }
 
 dl dt {
@@ -288,7 +289,7 @@ Full-Width Styles
 }
 
 .inner {
-  max-width: 800px;
+  max-width: 1000px;
   padding: 20px 10px;
   margin: 0 auto;
 }
@@ -299,7 +300,7 @@ Full-Width Styles
       background: #333;
       /*min-height: 595px;*/
 
-      width: 860px;
+      width: 1060px;
       margin: 0 auto;
       -webkit-border-radius: 8px;
       -moz-border-radius: 8px;
@@ -613,6 +614,7 @@ Small Device Styles
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+  text-indent: 0em;
   /*text-shadow: #111 0px 0px 10px;*/
 }
 #cssmenu:after,
@@ -946,4 +948,10 @@ Small Device Styles
   #cssmenu .submenu-button.submenu-opened:before {
     display: none;
   }
+}
+
+.center-image
+{
+    margin: 0 auto;
+    display: block;
 }

@@ -2,78 +2,56 @@
 layout: page
 title: NFBS Skull-Stripped Repository
 ---
+<p><img style="float: left;margin:0 23px 0 0" src="images/logo.png" width="33%" height="33%" /></p>
 
-Brain extraction, also known as skull stripping, is one of the first steps used in the preprocessing of neuroimaging data. The purpose is to remove non-brain tissue from structural magnetic resonance imaging (MRI) data in order to increase the quality of subsequent analyses. Many algorithms have been developed in order to solve the problem, though none have been able to overcome all of the challenges. In order to facilitate the development of automatic brain extraction methods, 125 T1-weighted anatomical MRI scans from The Enhanced Rockland Sample Neurofeedback Study were used to create a repository of manually skull stripped T1-weighted MR images.
-
-The BEaST method (brain extraction based on nonlocal segmentation technique) was used to create the initial masks, followed by bootstrapping some of the manually edited masks into its reference library. Maual editing was performed using the Freeview visualization software from Freeview. In total, 72 of the masks were hand edited and 43 were deemed good enough to be released. In order to compare the quality of the repository, a few skull stripping algorithms were used on the anatomical scans. The results were quantified using our repository as gold truth data and were compared to those using other datasets.
-
-The Neurofeedback Skull-stripped (NFBS) repository is available for download on the NFB\_skullstripped Github page, which can be found on the Preprocessed Connectomes Project website. It will allow researchers and data scientists to test brain extraction methods, as well as for training data in machine learning based algorithms.
-
+**The Neurofeedback Skull-stripped (NFBS) repository** is a database of 125 T1-weighted anatomical MRI scans that are manually skull-stripped. I addition to aiding in the processing and analysis of the NFB dataset, NFBS provides researchers with gold standard training and testing data for developing machine learning algorithms. The data was collected as a part of the [Enhanced Rockland Sample Neurofeedback Study](http://fcon_1000.projects.nitrc.org/indi/enhanced/).
 For more information, please see:
 
-Puccio et al. A repository of skull-stripped T1-weighted structural MRI data. (2016).
+Puccio et al. The Preprocessed Connectomes Project: repository of manually-corrected skull-stripped T1-weighted anatomical MRI data, *in submission*
 
-**Table of Contents**
+## Download
+- [NFBS skull-stripped images](https://fcp-indi.s3.amazonaws.com/data/Projects/RocklandSample/NFBS_Dataset.tar.gz) [1.9 GB]
+- [NFBS BEaST library](https://fcp-indi.s3.amazonaws.com/data/Projects/RocklandSample/NFBS_BEaST_Library.tar) [1.9 GB]
 
-* [Contents of the Repository](#contents-of-the-repository)
-* [Downloading the Repository](#downloading-the-repository)
-* [Contributors](##contributors)
-* [References](##references)
+<br>
+<br>
 
+## Contents of the repository
+<hr>
 
-## Contents of the Repository
+The repository contains data from 125 participants, 21 to 45 years old, with a variety of clinical and subclinical psychiatric symptoms. For each participant, the repository contains:
 
-The repository contains data from 125 participants, ranging from 21 to 45 years old. For each participant, the repository contains:
+- Structural T1-weighted anonymized (de-faced) image
+- Skull-stripped image
+- Brain mask
 
-* Structural T1-weighted anonymized (de-faced) image
-* Skull-stripped image
-* Brain mask
-
-The structural MRI data was collected as a part of the Neurofeedback study in the Enhanced Nathan Kline Institute - Rockland Sample. The resolution of the images is 1mm<sup>3</sup> and each file is in NiFTI format (.nii.gz).
-
-## Downloading the Repository
-
-Please go to our github page, http://www.github.com/preprocessed-connectomes-project/NFB_skullstripped
-
-The images are available in NiFTI format (.nii.gz).
-
-The total amount of free hard disk space required is ?
+The resolution of the images is 1 mm<sup>3</sup> and each file is in NiFTI format (.nii.gz). In addition, the repository contains a BEaST library that is customized for the NFB dataset.
 
 
+###Methods
 
-## Contributors
+The BEaST method[^1] (brain extraction based on nonlocal segmentation technique) was used to initially skull-strip the 125 anatomical T1-weighted images. This software uses a patch-based label fusion method that labels each voxel in the brain boundary volume by comparing it to similar locations in a library of segmented priors. The segmentation technique also incorporates a multi-resolution framework in order to reduce computational time. The version of BEaST used was 1.15.00 and our implementation was based off of a shell script written by Qingyang Li[^2]. Visual inspection of these initial skull-stripped images indicated whether additional edits were necessary.
 
-Benjamin Puccio
+Manual edits were performed using the Freeview visualization tool from the FreeSurfer software package[^3]. The standard for the NFBS was adapted from Eskildsen et al (2012). All exterior non-brain tissue was removed from the head image, specifically the skull, scalp, fat, muscle, dura mater, and external blood vessels and nerves. Time spent editing each mask ranged from 1–8 hours, depending on the quality of the anatomical image and the BEaST mask. Manually edited masks were added to the BEaST library, which was used to skull-strip the remaining datasets. This iterative technique was repeated until approximately 85 of the datasets were manually edited and all skull-strips were considered to be sufficient.
 
-Cameron Craddock
+![edit](images/edit.png){:height="50%" width="50%" .center-image}
 
-Carol Froehlich
+## Credits
+<hr>
 
-Amalia McDonald
+#### NFB Contributors
+- Benjamin Puccio, [Computational Neuroimaging Lab](http://computational-neuroimaging-lab.org), Center for Biomedical Imaging and Neuromodulation, Nathan S. Kline Institute for Psychiatric Research, Orangeburg, New York
+- James Pooley, Center for the Developing Brain, Child Mind Institute, New York, New York
+- John Pellman, Computational Neuroimaging Lab, Center for Biomedical Imaging and Neuromodulation, Nathan S. Kline Institute for Psychiatric Research, Orangeburg, New York, Center for the Developing Brain, Child Mind Institute, New York, New York
+- Elise Taverna, Center for Biomedical Imaging and Neuromodulation, Nathan S. Kline Institute for Psychiatric Research, Orangeburg, New York
+- R. Cameron Craddock, [Computational Neuroimaging Lab](http://computational-neuroimaging-lab.org), Center for Biomedical Imaging and Neuromodulation, Nathan S. Kline Institute for Psychiatric Research, Orangeburg, New York, Center for the Developing Brain, Child Mind Institute, New York, New York
 
-John Pellman
-
-Elise Taverna
+#### Acknowledgements
+We would like to thank Dr. Simon Fristed Eskildsen for help with the installation and optimization of the BEaST method. We would also like to acknowledge Qingyang Li for creating the BEaST guide, as well as the [Bash script](https://rpubs.com/conge/beast_intro) that we based our script on. Lastly, we would like to thank all of those involved in the participation, data collection, and data sharing initiative of the Enhanced Rockland Sample. This work was supported by R01MH101555 from the National Institute of Mental Health to RCC.
 
 
 ## References
-
-[^1]:This is the first reference
-
-[^2]:
-
-[^3]:
-
-[^4]:
-
-[^5]:
-
-[^6]:
-
-[^7]:
-
-[^8]:
-
-[^9]:
-
-[^10]:
+<hr>
+[^1]: Eskildsen, S.F., Coupe, P., Fonov, V., Manjon, J.V., Leung, K.K., Guizard, N., Wassef, S.N., stergaard, L.R., Collins, D.L.: BEaST: Brain extraction based on nonlocal segmentation technique. NeuroImage 59(3), 2362-2373 (2012).doi:10.1016/j.neuroimage.2011.09.0125.
+[^2]: A Brief Introduction to BEaST. [https://rpubs.com/conge/beast_intro](https://rpubs.com/conge/beast_intro).
+[^3]: FreeSurfer Software Suite. [https://surfer.nmr.mgh.harvard.edu/](https://surfer.nmr.mgh.harvard.edu/).
