@@ -13,7 +13,7 @@ Puccio et al. The Preprocessed Connectomes Project: repository of manually-corre
 - [NFBS skull-stripped images](https://fcp-indi.s3.amazonaws.com/data/Projects/RocklandSample/NFBS_Dataset.tar.gz) [1.9 GB]
 - [NFBS BEaST library](https://fcp-indi.s3.amazonaws.com/data/Projects/RocklandSample/NFBS_BEaST_Library.tar) [1.9 GB]
 
-<br>
+Please post questions about this repository to the [PCP Forum](https://groups.google.com/forum/#!forum/pcp_forum).
 <br>
 
 ## Contents of the repository
