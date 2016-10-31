@@ -4,7 +4,7 @@ title: NFBS Skull-Stripped Repository
 ---
 <p><img style="float: left;margin:0 23px 0 0" src="images/logo.png" width="33%" height="33%" /></p>
 
-**The Neurofeedback Skull-stripped (NFBS) repository** is a database of 125 T1-weighted anatomical MRI scans that are manually skull-stripped. I addition to aiding in the processing and analysis of the NFB dataset, NFBS provides researchers with gold standard training and testing data for developing machine learning algorithms. The data was collected as a part of the [Enhanced Rockland Sample Neurofeedback Study](http://fcon_1000.projects.nitrc.org/indi/enhanced/).
+**The Neurofeedback Skull-stripped (NFBS) repository** is a database of 125 T1-weighted anatomical MRI scans that are manually skull-stripped. In addition to aiding in the processing and analysis of the NFB dataset, NFBS provides researchers with gold standard training and testing data for developing machine learning algorithms. The data was collected as a part of the [Enhanced Rockland Sample Neurofeedback Study](http://fcon_1000.projects.nitrc.org/indi/enhanced/).
 For more information, please see:
 
 Puccio et al. The Preprocessed Connectomes Project: repository of manually-corrected skull-stripped T1-weighted anatomical MRI data, *in submission*
