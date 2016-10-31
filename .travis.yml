@@ -1,3 +1,6 @@
+language: ruby
+rvm:
+  - 2.2.5p319
 script: bundle exec rake travis
 env:
   matrix:
