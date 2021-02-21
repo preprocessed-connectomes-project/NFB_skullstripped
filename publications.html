@@ -5,11 +5,11 @@
         <meta charset='utf-8' />
         <meta http-equiv="X-UA-Compatible" content="chrome=1" />
         <meta name="description" content="Preprocessed Connectomes Project" />
-        <link rel="stylesheet" href="stylesheets/bib-publication-list.css"/>
+
         <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 	    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
         <script src="javascripts/menu_script.js"></script>
-        <title>NFBS Skull-Stripped Repository</title>
+        <title>NFB Skull-Stripped</title>
     </head>
 
     <body>
@@ -18,16 +18,14 @@
 
         <!-- HEADER -->
             <header>
-                <!--<a id="forkme_banner" href="https://github.com/ccraddock/abide_preproc">View on GitHub</a>-->
-
-                <h1 id="project_title">NFBS Skull-Stripped Repository</h1><br>
+                <h1 id="project_title">NFB Skull-Stripped</h1><br>
   		        <div id='cssmenu'>
   		            <ul>
-  		                <li><a href='index.html'>Overview</a></li>
-                        <li class='active'><a href='publications.html'>Publications</a></li>
-                        <li class='active'><a href='https://groups.google.com/forum/#!forum/pcp_forum'>Forum</a></li>
-                        <li class='active'><a href='https://preprocessed-connectomes-project.github.io' target="_blank">PCP</a></li>
-  		                <li class='active'><a href='https://github.com/preprocessed-connectomes-project/NFB_skullstripped' target="_blank">View on Github</a></li>
+  		                <li class='active'><a href='index.html'>Overview</a></li>
+                                <li class='active'><a href='https://groups.google.com/d/forum/pcp_forum' target="_blank">Forum</a></li>
+                                <li class='active'><a href='publications.html'>Publications</a></li>
+                                <li class='active'><a href='https://preprocessed-connectomes-project.github.io'>PCP</a></li>
+  		                <li class='active'><a href='https://github.com/preprocessed-connectomes-project' target="_blank"> View on Github</a></li>
 
   		            </ul>
   		        </div>
@@ -35,7 +33,30 @@
 
                 <div id="main_content_wrap" class="outer">
                     <section id="main_content" class="inner">
-                        
+
+						<p>If you use data from the ADHD-200 Preprocessed repository please cite our  <a href="https://doi.org/10.1186/s13742-016-0150-5" target="_blank">paper</a>:</p>
+
+            <p>Puccio B, Pooley JP, Pellman JS, Taverna EC, Craddock RC. The preprocessed connectomes project repository of manually corrected skull-stripped T1-weighted anatomical MRI data. <em>Gigascience. 2016 Oct 25;5(1):45.</em> doi: <a href="http://dx.doi.org/10.1186/s13742-016-0150-5">10.1186/s13742-016-0150-5</a>.
+
+              <p>If you have a publication that used NFB Skullstripped data but is not included on this list, please <a href="mailto:cameron.craddock@gmail.com">let us know</a>.
+						<br><br>
+                        <noscript>
+							<!-- bibtex source hidden by default, show it if JS disabled -->
+							<style>
+							    #bibtex { display: block;}
+							</style>
+						</noscript>
+
+						<table id="pubTable" class="display"></table>
+						<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+
+						<script type="text/javascript" src="javascripts/bib-list.js"></script>
+
+						<script type="text/javascript">
+						    $(document).ready(function() {
+						        bibtexify("nfbs_pubs.bib", "pubTable",{'tweet': 'RCCraddock'});
+						    });
+						</script>
 
                     </section>
                 </div>
